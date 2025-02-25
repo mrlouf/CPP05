@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 09:48:45 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/25 09:59:28 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:35:45 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 # include <string>
 # include <ostream>
 # include <iostream>
-
-class Bureaucrat;
+# include "Bureaucrat.hpp"
 
 class Form {
 	private:
@@ -28,11 +27,11 @@ class Form {
 	public:
 		Form();
 		Form(const Form &other);
-		Form &operator=(const Form &other) const;
+		Form &operator=(const Form &other);
 		~Form();
 
 		std::string const &getName() const;
-		bool getIsSigned();
+		bool getIsSigned() const;
 		int getSignGrade() const;
 		int getExecuteGrade() const;
 
@@ -49,13 +48,11 @@ class Form {
 
 };
 
+std::ostream &operator<<(std::ostream &out, const Form &f);
+
 #endif
 
 /*
-The grades of the Form follow the same rules that apply to the Bureaucrat. Thus,
-the following exceptions will be thrown if a form grade is out of bounds:
-Form::GradeTooHighException and Form::GradeTooLowException.
-
 Same as before, write getters for all attributes and an overload of the insertion («)
 operator that prints all the form’s informations.
 

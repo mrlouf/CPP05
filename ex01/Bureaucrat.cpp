@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:54:07 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/25 09:38:31 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/25 12:02:54 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name) {
 	std::cout << "Bureaucrat " << name << " created" << std::endl;
 	if (grade > 150)
-		_grade = 150;
+		throw GradeTooLowException();
 	else if (grade < 1)
-		_grade = 1;
+		throw GradeTooHighException();
 	else
 		_grade = grade;
 }
@@ -76,6 +76,15 @@ void Bureaucrat::decrementGrade() {
 	{
 		std::cout << e.what() << std::endl;
 	}
+}
+
+void Bureaucrat::signForm(Form &f) {
+    try {
+        f.beSigned(*this);
+    } 
+	catch (const GradeTooHighException &e) {
+        std::cout << e.what() << std::endl;
+    }
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat) {

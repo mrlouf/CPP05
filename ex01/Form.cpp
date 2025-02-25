@@ -6,10 +6,68 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 09:48:50 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/25 09:54:50 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:59:42 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
+Form::Form() : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {
+	std::cout << "Default Form created" << std::endl;
+}
 
+Form::Form(const Form &other) : _name(other._name), _isSigned(other._isSigned), \
+	_signGrade(other._signGrade), _executeGrade(other._executeGrade) {
+	std::cout << "Form " << other.getName() << " copied" << std::endl;
+}
+
+Form &Form::operator=(const Form &other) {
+	std::cout << "Assignment operator called" << std::endl;
+	if (this != &other) {
+		_isSigned = other._isSigned;
+	}
+	return *this;
+}
+
+Form::~Form() {
+	std::cout << "Form " << _name << " destroyed" << std::endl;
+}
+
+std::string const &Form::getName() const {
+	return _name;
+}
+
+bool Form::getIsSigned() const {
+	return _isSigned;
+}
+
+int Form::getSignGrade() const {
+	return _signGrade;
+}
+
+int Form::getExecuteGrade() const {
+	return _executeGrade;
+}
+
+void Form::beSigned(const Bureaucrat &b) {
+	if (b.getGrade() > _signGrade)
+		throw Form::GradeTooLowException();
+	else
+		_isSigned = true;
+}
+
+const char *Form::GradeTooHighException::what() const throw() {
+	return "Grade is too high";
+}
+
+const char *Form::GradeTooLowException::what() const throw() {
+	return "Grade is too low";
+}
+
+std::ostream &operator<<(std::ostream &out, const Form &f) {
+	if (f.getIsSigned())
+		out << f.getName() << ", is signed, sign grade " << f.getSignGrade() << ", exec grade " << f.getExecuteGrade();
+	else
+		out << f.getName() << ", not signed, sign grade " << f.getSignGrade() << ", exec grade " << f.getExecuteGrade();
+	return out;
+}

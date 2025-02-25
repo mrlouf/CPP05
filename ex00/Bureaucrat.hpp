@@ -6,16 +6,16 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:52:36 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/25 08:55:30 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:38:35 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#include <iostream>
-#include <ostream>
-#include <string>
+# include <iostream>
+# include <ostream>
+# include <string>
 
 class Bureaucrat {
 	private:
