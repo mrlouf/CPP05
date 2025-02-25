@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:52:36 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/24 18:58:36 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/25 08:55:30 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Bureaucrat {
 		std::string const	_name;
 		int					_grade;
 	public:
+		Bureaucrat();
 		Bureaucrat(std::string const name, int grade);
 		Bureaucrat(Bureaucrat const &bureaucrat);
 		~Bureaucrat();
