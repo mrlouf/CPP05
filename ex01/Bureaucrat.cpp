@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:54:07 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/25 12:02:54 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:20:30 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void Bureaucrat::decrementGrade() {
 void Bureaucrat::signForm(Form &f) {
     try {
         f.beSigned(*this);
+		std::cout << "Form \"" << f.getName() << "\" signed!" << std::endl;
     } 
 	catch (const GradeTooHighException &e) {
         std::cout << e.what() << std::endl;

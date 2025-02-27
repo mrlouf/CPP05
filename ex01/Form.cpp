@@ -6,11 +6,12 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 09:48:50 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/25 11:59:42 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:21:40 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form() : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {
 	std::cout << "Default Form created" << std::endl;
@@ -50,10 +51,9 @@ int Form::getExecuteGrade() const {
 }
 
 void Form::beSigned(const Bureaucrat &b) {
-	if (b.getGrade() > _signGrade)
-		throw Form::GradeTooLowException();
-	else
-		_isSigned = true;
+	if (b.getGrade() >= _signGrade)
+		throw GradeTooLowException();
+	_isSigned = true;
 }
 
 const char *Form::GradeTooHighException::what() const throw() {

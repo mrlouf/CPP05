@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:52:36 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/25 12:11:37 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:06:14 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <ostream>
 # include <string>
+
 # include "Form.hpp"
 
 class Bureaucrat {
