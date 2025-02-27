@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 09:48:45 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/27 14:06:42 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:39:28 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class Form {
 		Form(const Form &other);
 		Form &operator=(const Form &other);
 		~Form();
+
+		Form(const std::string name, const int signGrade, const int executeGrade);
 
 		std::string const &getName() const;
 		bool getIsSigned() const;

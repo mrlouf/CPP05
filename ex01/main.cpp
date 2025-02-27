@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:55:59 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/27 14:36:05 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:43:19 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,28 @@ int	main() {
 		std::cout << std::endl;
 		Bureaucrat H = Bureaucrat("Hugo", 150);
 		Form F;
+		try {H.signForm(F);}
+		catch (const Form::GradeTooLowException &e)
+		{
+		std::cout << e.what() << std::endl;
+		}
+		std::cout << F.getIsSigned() << std::endl;
+	}
+	{
+		std::cout << std::endl;
+		Bureaucrat H = Bureaucrat("Hugo", 150);
+		Form F = Form("License to chill", 20, 10);
+		try {H.signForm(F);}
+		catch (const Form::GradeTooLowException &e)
+		{
+		std::cout << e.what() << std::endl;
+		}
+		std::cout << F.getIsSigned() << std::endl;
+	}
+	{
+		std::cout << std::endl;
+		Bureaucrat H = Bureaucrat("Hugo", 15);
+		Form F = Form("License to chill", 20, 10);
 		try {H.signForm(F);}
 		catch (const Form::GradeTooLowException &e)
 		{

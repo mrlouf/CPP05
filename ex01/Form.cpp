@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 09:48:50 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/27 14:21:40 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:42:14 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ Form &Form::operator=(const Form &other) {
 		_isSigned = other._isSigned;
 	}
 	return *this;
+}
+
+Form::Form(const std::string name, const int signGrade, const int executeGrade) \
+	: _name(name), _isSigned(false), _signGrade(signGrade), _executeGrade(executeGrade) {
 }
 
 Form::~Form() {
