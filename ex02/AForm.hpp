@@ -24,7 +24,8 @@ class AForm {
 		const std::string		_name;
 		bool					_isSigned;
 		const int				_signGrade;
-		const int				_executeGrade;		
+		const int				_executeGrade;
+
 	public:
 		AForm();
 		AForm(const AForm &other);
@@ -38,7 +39,7 @@ class AForm {
 		int getSignGrade() const;
 		int getExecuteGrade() const;
 
-		void execute(Bureaucrat const & executor) const;
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 		void beSigned(const Bureaucrat &b);
 
