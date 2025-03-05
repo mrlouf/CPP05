@@ -6,11 +6,12 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:43:03 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/04 11:43:55 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/05 13:41:13 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+#include "Bureaucrat.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() : \
 _name("PFF"), _isSigned(false), _signGrade(25), _executeGrade(5), _target("None") {
@@ -36,6 +37,9 @@ _name("PFF"), _isSigned(false), _signGrade(25), _executeGrade(5), _target(target
 	std::cout << "PFF created" << std::endl;
 }
 
-void execute(Bureaucrat const &executor) {
-	std::cout << "PFF executed by " << executor << std::endl;
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
+	if (executor.getGrade() <= _executeGrade)
+		std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	else
+		throw GradeTooLowException();
 }
