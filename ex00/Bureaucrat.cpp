@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:54:07 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/25 11:00:01 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/06 12:10:05 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,31 +51,17 @@ int Bureaucrat::getGrade() const {
 }
 
 void Bureaucrat::incrementGrade() {
-	try
-	{
-		if (_grade > 1)
-			_grade--;
-		else
-			throw GradeTooHighException();
-	}
-	catch (const GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	if (_grade > 1)
+		_grade--;
+	else
+		throw GradeTooHighException();
 }
 
 void Bureaucrat::decrementGrade() {
-	try
-	{
-		if (_grade < 150)
-			_grade++;
-		else
-			throw GradeTooLowException();
-	}
-	catch (const GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	if (_grade < 150)
+		_grade++;
+	else
+		throw GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat) {

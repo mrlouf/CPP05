@@ -45,6 +45,8 @@
 		"utility": "cpp",
 		"limits": "cpp",
 		"numbers": "cpp",
-		"ranges": "cpp"
+		"ranges": "cpp",
+		"ctime": "cpp",
+		"fstream": "cpp"
 	}
 }

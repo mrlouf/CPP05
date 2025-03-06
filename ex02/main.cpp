@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:55:59 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/05 14:24:29 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/06 13:31:33 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main() {
 			PresidentialPardonForm PFF = PresidentialPardonForm("target");
 			H.signForm(PFF);
 			std::cout << "Jumps to the catch and skips the rest" << std::endl;
-			PFF.execute(H);
+			H.executeForm(PFF);
 		} catch (const std::exception &e) {
 			std::cout << "Caught exception: " << e.what() << std::endl;
 		}
@@ -35,7 +35,17 @@ int	main() {
 			Bureaucrat H = Bureaucrat("Hugo", 15);
 			PresidentialPardonForm PFF = PresidentialPardonForm("target");
 			H.signForm(PFF);
-			PFF.execute(H);
+			H.executeForm(PFF);
+		} catch (const std::exception &e) {
+			std::cout << "Caught exception: " << e.what() << std::endl;
+		}
+	}
+	{
+		std::cout << std::endl << "\033[1;31mTest try execute unsigned PFF\033[0m" << std::endl;
+		try {
+			Bureaucrat H = Bureaucrat("Hugo", 1);
+			PresidentialPardonForm PFF = PresidentialPardonForm("Oktorok");
+			H.executeForm(PFF);
 		} catch (const std::exception &e) {
 			std::cout << "Caught exception: " << e.what() << std::endl;
 		}
@@ -46,7 +56,7 @@ int	main() {
 			Bureaucrat H = Bureaucrat("Hugo", 1);
 			PresidentialPardonForm PFF = PresidentialPardonForm("Oktorok");
 			H.signForm(PFF);
-			PFF.execute(H);
+			H.executeForm(PFF);
 		} catch (const std::exception &e) {
 			std::cout << "Caught exception: " << e.what() << std::endl;
 		}
@@ -57,7 +67,7 @@ int	main() {
 			Bureaucrat H = Bureaucrat("Hugo", 1);
 			RobotomyRequestForm RRF("Oktorok");
 			H.signForm(RRF);
-			RRF.execute(H);
+			H.executeForm(RRF);
 		} catch (const std::exception &e) {
 			std::cout << "Caught exception: " << e.what() << std::endl;
 		}
@@ -68,7 +78,7 @@ int	main() {
 			Bureaucrat H = Bureaucrat("Hugo", 1);
 			ShrubberyCreationForm SCF("Oktorok");
 			H.signForm(SCF);
-			SCF.execute(H);
+			H.executeForm(SCF);
 		} catch (const std::exception &e) {
 			std::cout << "Caught exception: " << e.what() << std::endl;
 		}
