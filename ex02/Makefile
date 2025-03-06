@@ -43,7 +43,7 @@ clean:
 	@$(RM) $(OBJDIR)
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) Oktorok_shrubbery
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:29:08 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/05 13:45:22 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/06 10:50:09 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 
 class PresidentialPardonForm : public AForm {
 	private:
-		const std::string		_name;
-		bool					_isSigned;
-		const int				_signGrade;
-		const int				_executeGrade;
-
 		const std::string		_target;
 
 	public:

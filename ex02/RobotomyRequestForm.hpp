@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 13:45:44 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/05 13:47:11 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/06 10:50:01 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@
 
 class RobotomyRequestForm : public AForm {
 	private:
-		const std::string		_name;
-		bool					_isSigned;
-		const int				_signGrade;
-		const int				_executeGrade;
-
 		const std::string		_target;
 
 	public:
