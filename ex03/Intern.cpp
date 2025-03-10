@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:07:20 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/06 11:33:09 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/10 11:32:58 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,12 @@ Intern &Intern::operator=(const Intern &other) {
 
 AForm* Intern::makeForm(std::string name, std::string target) {
 	
-	// Array of strings for each form
 	const std::string formNames[3] = {
 		"presidential pardon",
 		"robotomy request",
 		"shrubbery creation"
 	};
 
-	// Array of pointers to creator functions
 	AForm* (Intern::*formCreators[3])(std::string) const = {
 		&Intern::createPresidential,
 		&Intern::createRobotomy,

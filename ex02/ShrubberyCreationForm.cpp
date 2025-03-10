@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 14:03:04 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/06 13:23:00 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/10 10:34:19 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "Bureaucrat.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm() : \
-AForm("SCF", 72, 45), _target("None") {
+AForm("SCF", 145, 137), _target("None") {
 	std::cout << "SCF created" << std::endl;
 }
 

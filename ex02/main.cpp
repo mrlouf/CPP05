@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:55:59 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/06 13:31:33 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/10 11:38:18 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main() {
 			Bureaucrat H = Bureaucrat("Hugo", 150);
 			PresidentialPardonForm PFF = PresidentialPardonForm("target");
 			H.signForm(PFF);
-			std::cout << "Jumps to the catch and skips the rest" << std::endl;
+			std::cout << "Exception thrown, continue execution in try-block" << std::endl;
 			H.executeForm(PFF);
 		} catch (const std::exception &e) {
 			std::cout << "Caught exception: " << e.what() << std::endl;
@@ -45,6 +45,8 @@ int	main() {
 		try {
 			Bureaucrat H = Bureaucrat("Hugo", 1);
 			PresidentialPardonForm PFF = PresidentialPardonForm("Oktorok");
+			H.executeForm(PFF);
+			H.signForm(PFF);
 			H.executeForm(PFF);
 		} catch (const std::exception &e) {
 			std::cout << "Caught exception: " << e.what() << std::endl;

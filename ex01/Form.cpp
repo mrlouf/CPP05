@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 09:48:50 by nponchon          #+#    #+#             */
-/*   Updated: 2025/02/27 14:42:14 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/10 10:21:48 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ const char *Form::GradeTooLowException::what() const throw() {
 
 std::ostream &operator<<(std::ostream &out, const Form &f) {
 	if (f.getIsSigned())
-		out << f.getName() << ", is signed, sign grade " << f.getSignGrade() << ", exec grade " << f.getExecuteGrade();
+		out << f.getName() << ", 1, " << f.getSignGrade() << ", " << f.getExecuteGrade();
 	else
-		out << f.getName() << ", not signed, sign grade " << f.getSignGrade() << ", exec grade " << f.getExecuteGrade();
+		out << f.getName() << ", 0, " << f.getSignGrade() << ", " << f.getExecuteGrade();
 	return out;
 }
